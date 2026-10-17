@@ -5,7 +5,7 @@
 
 ## Context
 
-The visual design of Homebody (design system and screen mockups) is produced
+The visual design of Body Do (design system and screen mockups) is produced
 separately and will arrive after the application logic is in place. The UI
 steps of the plan must not block on it, and the work done before it arrives
 must not have to be redone when it does.

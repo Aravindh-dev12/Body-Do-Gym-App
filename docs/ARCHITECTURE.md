@@ -1,6 +1,6 @@
 # Architecture
 
-Homebody is a client-only single-page application. There is no server, no
+Body Do is a client-only single-page application. There is no server, no
 account and no network dependency at runtime: the plan is computed in the
 browser and every piece of user data is stored on the device.
 

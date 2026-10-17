@@ -1,10 +1,10 @@
 # Training science
 
-This document explains what Homebody calculates and where the numbers come
+This document explains what Body Do calculates and where the numbers come
 from. Every rule described here is implemented in [`src/engine/`](../src/engine)
 and pinned by tests.
 
-Homebody is a planning aid, not a coach and not medical advice. The models are
+Body Do is a planning aid, not a coach and not medical advice. The models are
 deliberately simple, transparent and conservative: they give a sensible
 starting point and then follow what you actually do.
 

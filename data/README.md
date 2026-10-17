@@ -1,6 +1,6 @@
 # Exercise dataset
 
-`exercises.json` is the catalog Homebody plans from: 141 home-friendly
+`exercises.json` is the catalog Body Do plans from: 141 home-friendly
 exercises, each with two photos (start and end position) in
 `public/exercises/<id>/0.webp` and `1.webp`.
 
@@ -8,7 +8,7 @@ The records are curated from
 [free-exercise-db](https://github.com/yuhonas/free-exercise-db), which is in
 the public domain (Unlicense). Names, instructions, muscles and photos come
 from upstream; the planning fields and the Russian translations were added for
-Homebody.
+Body Do.
 
 The format is defined and documented in
 [`src/data/schema.ts`](../src/data/schema.ts). Validate any change with:

@@ -1,4 +1,4 @@
-# Contributing to Homebody
+# Contributing to Body Do
 
 Thank you for taking the time to contribute. Bug reports, translations, new exercises and code are
 all welcome.

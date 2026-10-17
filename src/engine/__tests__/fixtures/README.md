@@ -1,7 +1,7 @@
 # Golden fixtures
 
 These files pin the behaviour of the engine to the single-file prototype that
-Homebody was rebuilt from.
+Body Do was rebuilt from.
 
 - `scenarios.json` — 23 engine inputs covering every split, goal, level and
   equipment combination, plus swaps, exclusions, manual edits, ratings, load

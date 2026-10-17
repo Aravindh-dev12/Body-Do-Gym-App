@@ -5,7 +5,7 @@
 
 ## Context
 
-Homebody is a home workout planner and load calculator. It has to work
+Body Do is a home workout planner and load calculator. It has to work
 offline, keep all data on the device and be approachable for outside
 contributors. The core of the product is a calculation engine whose results
 must be easy to verify. There is no backend and none is planned.

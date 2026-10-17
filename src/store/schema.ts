@@ -1,5 +1,5 @@
 /**
- * Schemas of everything Homebody persists. Stored data and imported backups
+ * Schemas of everything Body Do persists. Stored data and imported backups
  * are validated against them before they reach the store.
  */
 import { z } from 'zod';

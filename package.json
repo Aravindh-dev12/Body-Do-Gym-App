@@ -5,13 +5,13 @@
   "description": "Body workout planner and load calculator. Offline, private, science-based.",
   "license": "MIT",
   "author": "Khoren Markosyan",
-  "homepage": "https://github.com/khoren93/homebody#readme",
+  "homepage": "https://github.com/Aravindh-dev12/Body-Do-Gym-App#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khoren93/homebody.git"
+    "url": "git+https://github.com/Aravindh-dev12/Body-Do-Gym-App.git"
   },
   "bugs": {
-    "url": "https://github.com/khoren93/homebody/issues"
+    "url": "https://github.com/Aravindh-dev12/Body-Do-Gym-App/issues"
   },
   "type": "module",
   "packageManager": "pnpm@10.34.6",

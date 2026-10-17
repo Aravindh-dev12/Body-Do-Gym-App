@@ -1,4 +1,4 @@
-# ADR 0004: Adopting the Homebody design system
+# ADR 0004: Adopting the Body Do design system
 
 - **Status:** accepted
 - **Date:** 2026-10-11
@@ -6,7 +6,7 @@
 ## Context
 
 [ADR 0002](0002-deferred-visual-design.md) kept the visual layer provisional
-until the design arrived. It has: a design system named Homebody (tokens for a
+until the design arrived. It has: a design system named Body Do (tokens for a
 dark and a light theme, type, spacing, radius, and component specs for Button,
 Chip, SegmentedControl, StatTile, SetTracker, RestTimer, ExerciseCard,
 HeatScale and TabBar) and a canvas of screen mockups (Today, Workout, Muscle

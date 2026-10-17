@@ -2,14 +2,14 @@
 
 ## Supported versions
 
-Homebody is a static web app without a backend. Only the latest release and the `main` branch
+Body Do is a static web app without a backend. Only the latest release and the `main` branch
 receive fixes.
 
 ## Reporting a vulnerability
 
 Please report security problems privately, not in a public issue:
 
-- through GitHub's [private vulnerability reporting](https://github.com/khoren93/homebody/security/advisories/new), or
+- through GitHub's [private vulnerability reporting](https://github.com/Aravindh-dev12/Body-Do-Gym-App/security/advisories/new), or
 - by email to khoren.markosyan@gmail.com.
 
 Include what you found, how to reproduce it and what an attacker could do with it. You can expect

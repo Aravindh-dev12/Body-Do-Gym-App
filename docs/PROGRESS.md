@@ -1,6 +1,6 @@
 # Progress
 
-Homebody is built in small, shippable steps. Each step is one commit (or a few
+Body Do is built in small, shippable steps. Each step is one commit (or a few
 tightly related ones) that leaves the project building, linted and tested.
 
 ## Steps

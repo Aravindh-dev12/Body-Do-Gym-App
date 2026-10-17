@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="public/favicon.svg" width="72" height="72" alt="">
+  <img src="public/favicon.svg" width="72" height="72" alt="Body Do Logo">
   <h1>Body Do</h1>
   <p><strong>Your workout planner, planned like a pro.</strong></p>
   <p>
     A workout planner and load calculator for the equipment you actually own.<br>
-    No account, no backend, no tracking. It works offline and your data stays on your device.
+    Pure black & athletic red theme, offline-first, no tracking. Your data stays on your device.
   </p>
 </div>
 
@@ -13,9 +13,9 @@
   <img src="docs/assets/hero-light.png" alt="Body Do: the plan, the muscle heat map and a workout with the rest timer">
 </picture>
 
-Body Do builds a training plan from your schedule and equipment, tells you how much to lift in
+Body Do builds a personalized training plan from your schedule and equipment, tells you how much to lift in
 every set, and adjusts the numbers as you log your sessions. It is science-based, runs entirely in
-the browser, and can be installed as an app.
+the browser, and can be installed as an offline progressive web app (PWA).
 
 ## Features
 
@@ -32,6 +32,14 @@ the browser, and can be installed as an app.
   </tr>
 </table>
 
+**Modern UI & Design**
+
+- **Pitch Black & Athletic Red Theme:** Pure OLED black backgrounds (`#000000`), dark surfaces, and energetic red accents (`#ff2a40`).
+- **Collapsible Sidebar:** Flexible desktop navigation with one-click expand/collapse and saved user preference.
+- **Account & Profile Modal:** Quick-access sign in / sign up and guest mode directly from the sidebar.
+- **Spacious Dashboard Layout:** Generous `82rem` content layout that takes full advantage of wide desktop monitors.
+- **Custom Dumbbell Branding:** Signature vertical dumbbell iconography across the app, splash screen, and PWA icons.
+
 **Planning**
 
 - Full body, upper/lower or push/pull/legs, chosen from the days you train.
@@ -43,7 +51,7 @@ the browser, and can be installed as an app.
 **Load calculator**
 
 - Starting weights from body weight, experience, sex and age, picked from the weights you own.
-- Progression driven by estimated one-rep max and reps in reserve.
+- Progression driven by estimated one-rep max (e1RM) and reps in reserve (RIR).
 - Edit any set or rate how it felt, and every later session is recalculated.
 - Warm-up sets and a plate breakdown for barbells.
 
@@ -54,26 +62,24 @@ the browser, and can be installed as an app.
 - Swap an exercise for an alternative that trains the same muscles, by hand or at random.
 - The screen stays awake while you train.
 
-**Exercises**
+**Exercises & Muscle Map**
 
-- A front and back body map with 17 muscle groups: tap a muscle to see what trains it.
-- Weekly volume as a heat map, planned or actually performed, rated against your goal.
-- A catalog of 141 exercises under the map, with search, filters and three levels of detail.
+- Front and back interactive body map with 17 muscle groups: tap a muscle to see target exercises.
+- Weekly volume as an intensity heat map, planned or actually performed, rated against your goal.
+- Catalog of 141 exercises under the map, with search, filters and three levels of detail.
 
-**Body**
+**Body Measurements**
 
-- Weight, six girths, BMI and body fat estimated with the US Navy method.
+- Weight, six girths, BMI and body fat estimated with the US Navy circumference method.
 - Charts for every metric and a journal.
-- Progress photos by pose with a side-by-side comparison.
+- Progress photos by pose with side-by-side comparison.
 
-**Privacy**
+**Privacy & Offline-First**
 
-- No analytics, no trackers, no third-party requests: even the fonts are bundled.
-- Everything is stored in your browser. Export and import a single backup file whenever you like.
-- Installable, and fully usable offline after the first visit.
-- English and Russian, light and dark theme.
-
-<p align="center"><img src="docs/assets/demo.gif" width="320" alt="A short walk through a workout, the muscle map and the progress screen"></p>
+- No analytics, no third-party trackers: even fonts are bundled locally.
+- Everything is stored directly in your browser with IndexedDB and single-file backup/restore.
+- Installable progressive web app (PWA) that runs completely offline.
+- English and Russian support with dark theme by default.
 
 ## Quick start
 
@@ -97,7 +103,7 @@ validation, unit tests and the production build. `make e2e` runs the Playwright 
 
 ## How it works
 
-The short version; [docs/TRAINING_SCIENCE.md](docs/TRAINING_SCIENCE.md) has every rule and number.
+The short version; [docs/TRAINING_SCIENCE.md](docs/TRAINING_SCIENCE.md) has every rule and formula.
 
 **Effort is prescribed as reps in reserve (RIR)**: how many more reps you could have done at the
 end of a set. A four-week block goes 3 → 2 → 1 RIR and then deloads.
@@ -128,14 +134,14 @@ women).
 
 > [!NOTE]
 > These are simple, transparent population models that give a sensible starting point. Body Do is
-> not a coach.
+> a planning aid, not medical advice.
 
 ## Tech stack
 
 | Concern  | Choice                                                                      |
 | -------- | --------------------------------------------------------------------------- |
 | Build    | Vite, TypeScript (strict), pnpm                                             |
-| UI       | React, CSS Modules on design tokens, hand-written SVG charts and body map   |
+| UI       | React, CSS Modules on design tokens, custom SVG dumbbell logo & charts      |
 | State    | Zustand; the plan is derived from the state, never stored                   |
 | Storage  | IndexedDB through Dexie; Zod validates stored data, backups and the dataset |
 | i18n     | i18next, with type-checked keys                                             |
@@ -155,31 +161,16 @@ src/
   data/          schema and loader of the exercise dataset
   store/         state, transforms, derived plan, persistence, backup
   i18n/          setup, locales/en.json, locales/ru.json, formatting
-  components/    shared UI building blocks
-  features/      plan, session, progress, exercises, body, settings
-  app/           shell, tab bar, service worker registration
-  styles/        design tokens, fonts, base styles
+  components/    shared UI building blocks (Logo, Button, Dialog, Field, Icon, etc.)
+  features/      plan, session, progress, exercises, body, settings, auth
+  app/           shell, collapsible sidebar / tab bar, service worker registration
+  styles/        design tokens (tokens.css), fonts, base styles
 data/            exercises.json, the dataset
-public/          icons and exercise photos
-scripts/         dataset validation and sync, icons, screenshots
+public/          icons, favicon, and exercise photos
+scripts/         dataset validation, icon generation, screenshots
 e2e/             Playwright specs
 docs/            architecture, training science, decision records, progress log
 ```
-
-The engine is the heart of the project. It is deterministic and side-effect free, has over 90 %
-test coverage, and is pinned to golden values so that a change in its numbers never goes unnoticed.
-
-## Localization
-
-All interface text lives in `src/i18n/locales/`. To add a language:
-
-1. Copy `en.json` to `<code>.json` and translate the values. Keep the keys and the
-   `{{placeholders}}`; add the plural forms your language needs (`_one`, `_few`, `_many`, `_other`).
-2. Register the locale in `src/i18n/locale.ts` (`LOCALES`, `LOCALE_NAMES`) and in
-   `src/i18n/index.ts` (`resources`).
-3. Add a `name.<code>` to the exercises in `data/exercises.json` and to `LocalizedNameSchema` in
-   `src/data/schema.ts`.
-4. Run `make test`: the suite fails if a locale misses a key, a placeholder or a plural form.
 
 ## Adding exercises
 
@@ -189,26 +180,10 @@ Exercises come from [free-exercise-db](https://github.com/yuhonas/free-exercise-
 pnpm data:build --add Some_Upstream_Id   # creates a draft record and downloads its photos
 ```
 
-Then fill in the planning fields of the new record in `data/exercises.json` (movement pattern,
-equipment, type, baseline) and run `make data-validate`. The fields are described in
-[data/README.md](data/README.md), and [CONTRIBUTING.md](CONTRIBUTING.md#adding-an-exercise) walks
-through the steps. To propose an exercise without writing the record yourself, open a
-[New exercise](https://github.com/khoren93/homebody/issues/new?template=new_exercise.yml) issue.
-
-## Roadmap
-
-Ideas for after 0.1, roughly in order of interest:
-
-- Choose the split yourself (auto, full body, upper/lower, body part).
-- A recovery view on the body map and a "balance my plan" suggestion.
-- Custom exercises with your own photos, supersets, cardio and mobility blocks.
-- An injury mode that works around a joint.
-- A monthly report.
-- More languages, Armenian first, and more exercises from the upstream dataset.
-- Optional, end-to-end encrypted sync between devices.
-
-Open an [issue](https://github.com/khoren93/homebody/issues) to discuss any of these or to
-propose something else.
+Then fill in the planning fields of the new record in `data/exercises.json` and run `make data-validate`.
+The fields are described in [data/README.md](data/README.md), and [CONTRIBUTING.md](CONTRIBUTING.md#adding-an-exercise) walks
+through the steps. To propose an exercise, open a
+[New exercise](https://github.com/Aravindh-dev12/Body-Do-Gym-App/issues/new?template=new_exercise.yml) issue.
 
 ## Contributing
 
@@ -222,6 +197,11 @@ Body Do is released under the [MIT License](LICENSE).
 Exercise data and photos come from the
 [free-exercise-db](https://github.com/yuhonas/free-exercise-db) project, released into the public
 domain under the Unlicense. Fonts: Archivo, Geist and Geist Mono, under the SIL Open Font License.
+
+## Repository
+
+- **GitHub:** [https://github.com/Aravindh-dev12/Body-Do-Gym-App](https://github.com/Aravindh-dev12/Body-Do-Gym-App)
+- **Issues:** [https://github.com/Aravindh-dev12/Body-Do-Gym-App/issues](https://github.com/Aravindh-dev12/Body-Do-Gym-App/issues)
 
 ## Disclaimer
 
