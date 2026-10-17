@@ -8,10 +8,6 @@
   fill: var(--accent);
 }
 
-.line {
-  fill: none;
-  stroke: var(--on-accent);
-  stroke-width: 2.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.mark {
+  fill: var(--on-accent);
 }

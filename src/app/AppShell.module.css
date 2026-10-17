@@ -15,10 +15,28 @@
 
 @media (min-width: 56.25rem) {
   .frame {
-    padding-inline-start: calc(var(--rail-width) + var(--space-8));
+    padding-inline-start: calc(var(--sidebar-width) + var(--space-8));
     padding-inline-end: var(--space-8);
     padding-bottom: var(--space-8);
-    max-width: calc(var(--content-width) + var(--rail-width) + var(--space-8) * 2);
+    max-width: calc(var(--content-width) + var(--sidebar-width) + var(--space-8) * 2);
+    transition:
+      padding-inline-start var(--duration-fast) ease,
+      max-width var(--duration-fast) ease;
+  }
+
+  .sidebarCollapsed {
+    padding-inline-start: calc(var(--sidebar-collapsed-width) + var(--space-8));
+    max-width: calc(var(--content-width) + var(--sidebar-collapsed-width) + var(--space-8) * 2);
+  }
+}
+
+.mobileProfile {
+  display: flex;
+}
+
+@media (min-width: 56.25rem) {
+  .mobileProfile {
+    display: none;
   }
 }
 

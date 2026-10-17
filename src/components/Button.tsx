@@ -62,3 +62,18 @@ export function IconLink({
     </a>
   );
 }
+
+/** A round icon-only button. `label` names it for assistive technology. */
+export function IconButton({
+  label,
+  className,
+  children,
+  type = 'button',
+  ...rest
+}: ButtonHTMLAttributes<HTMLButtonElement> & { label: string }) {
+  return (
+    <button type={type} className={cx(styles.icon, className)} aria-label={label} {...rest}>
+      {children}
+    </button>
+  );
+}

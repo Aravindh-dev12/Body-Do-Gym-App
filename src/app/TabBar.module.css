@@ -1,15 +1,28 @@
-/* Design system: TabBar. Bottom bar on phones, a left rail on wide screens. */
-.bar {
+/* Navigation bar on mobile, full collapsible sidebar on desktop. */
+.sidebar {
   position: fixed;
   inset-inline: 0;
   bottom: 0;
   z-index: var(--z-tab-bar);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: calc(var(--tab-bar-height) + env(safe-area-inset-bottom, 0px));
   padding: var(--space-2) var(--space-3) calc(18px + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--line);
   background: var(--bg);
+  transition: width var(--duration-fast) ease;
+}
+
+.top,
+.bottom {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .list {
@@ -18,6 +31,7 @@
   width: 100%;
   max-width: 30rem;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -36,11 +50,26 @@
   font-weight: 500;
   line-height: 14px;
   text-decoration: none;
+  border-radius: var(--radius-m);
+  transition:
+    color var(--duration-fast),
+    background var(--duration-fast);
+}
+
+.link:hover {
+  color: var(--ink);
 }
 
 .link[aria-current='page'] {
   color: var(--accent-ink);
   font-weight: 600;
+}
+
+.iconWrap {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
 }
 
 .label {
@@ -50,20 +79,217 @@
   white-space: nowrap;
 }
 
+/* Wide screen / Desktop collapsible sidebar */
 @media (min-width: 56.25rem) {
-  .bar {
+  .sidebar {
     inset-block: 0;
     inset-inline: 0 auto;
-    align-items: flex-start;
-    width: var(--rail-width);
-    height: auto;
-    padding: var(--space-8) var(--space-2);
+    justify-content: space-between;
+    width: var(--sidebar-width);
+    height: 100vh;
+    padding: var(--space-5) var(--space-3);
     border-top: 0;
     border-inline-end: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+    padding: var(--space-5) var(--space-2);
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar.collapsed .top {
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    text-decoration: none;
+    min-width: 0;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-stretch: var(--display-stretch);
+    font-weight: var(--display-weight);
+    letter-spacing: -0.02em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .collapseToggle {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-s);
+    background: var(--surface-2);
+    color: var(--ink-muted);
+    cursor: pointer;
+    flex: none;
+    transition:
+      background var(--duration-fast),
+      color var(--duration-fast);
+  }
+
+  .collapseToggle:hover {
+    background: var(--surface-3);
+    color: var(--ink);
+  }
+
+  .nav {
+    flex: 1;
+    display: block;
   }
 
   .list {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: none;
+  }
+
+  .link {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3);
+    min-height: 44px;
+    padding: 0 var(--space-3);
+    font-size: var(--text-body-s);
+    line-height: normal;
+  }
+
+  .link:hover {
+    background: var(--surface-2);
+  }
+
+  .link[aria-current='page'] {
+    background: var(--surface-2);
+    color: var(--accent-ink);
+  }
+
+  .sidebar.collapsed .link {
+    justify-content: center;
+    padding: 0;
+    min-height: 44px;
+  }
+
+  .sidebar.collapsed .label {
+    display: none;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--line);
+    margin-top: auto;
+  }
+
+  .profileButton {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+    padding: var(--space-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-m);
+    background: var(--surface-2);
+    color: var(--ink);
+    cursor: pointer;
+    text-align: left;
+    transition:
+      background var(--duration-fast),
+      border-color var(--duration-fast);
+  }
+
+  .profileButton:hover {
+    background: var(--surface-3);
+    border-color: var(--accent);
+  }
+
+  .sidebar.collapsed .profileButton {
+    justify-content: center;
+    padding: var(--space-2) 0;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .avatarBadge {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--surface-3);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+    flex: none;
+  }
+
+  .avatarActive {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .profileInfo {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .profileName {
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--ink);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .profileSub {
+    font-size: 10px;
+    color: var(--ink-muted);
+  }
+
+  .bottomCollapseButton {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    border: 0;
+    border-radius: var(--radius-s);
+    background: transparent;
+    color: var(--ink-muted);
+    font-size: var(--text-caption);
+    cursor: pointer;
+    transition: color var(--duration-fast);
+  }
+
+  .bottomCollapseButton:hover {
+    color: var(--ink);
   }
 }

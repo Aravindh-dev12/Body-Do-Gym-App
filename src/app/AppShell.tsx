@@ -1,10 +1,12 @@
-import { type ReactNode, useEffect } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Banner } from '@/components/Banner';
-import { IconLink } from '@/components/Button';
+import { IconButton, IconLink } from '@/components/Button';
 import { Icon } from '@/components/Icon';
 import { Logo } from '@/components/Logo';
+import { ProfileDialog } from '@/features/auth/ProfileDialog';
+import { useUserProfile } from '@/features/auth/useUserProfile';
 import { useFrameTicker } from '@/features/exercise/useFrameTicker';
 import { useFormat } from '@/i18n/useFormat';
 import { cx } from '@/lib/cx';
@@ -32,6 +34,28 @@ export function AppShell({ children }: { children: (route: Route) => ReactNode }
   const saveFailed = useAppStore((store) => store.saveFailed);
   const today = useToday();
   const format = useFormat();
+  const { profile } = useUserProfile();
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('bodydo_sidebar_collapsed') === 'true';
+    } catch {
+      return false;
+    }
+  });
+
+  const toggleCollapsed = () => {
+    setCollapsed((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('bodydo_sidebar_collapsed', String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
   // During a workout the chrome steps back: no header, no tab bar.
   const immersive = route.name === 'session';
   useScrollReset(route);
@@ -50,7 +74,13 @@ export function AppShell({ children }: { children: (route: Route) => ReactNode }
       >
         {t('shell.skip')}
       </a>
-      <div className={cx(styles.frame, immersive && styles.immersive)}>
+      <div
+        className={cx(
+          styles.frame,
+          immersive && styles.immersive,
+          collapsed && styles.sidebarCollapsed,
+        )}
+      >
         {!immersive && (
           <header className={styles.header}>
             <a className={styles.brand} href={routeHref({ name: 'plan' })}>
@@ -59,6 +89,13 @@ export function AppShell({ children }: { children: (route: Route) => ReactNode }
             </a>
             <div className={styles.meta}>
               <time dateTime={today}>{format.date(today)}</time>
+              <IconButton
+                className={styles.mobileProfile}
+                label={profile?.signedIn ? profile.name : t('auth.signIn', 'Sign in')}
+                onClick={() => setProfileOpen(true)}
+              >
+                <Icon name="user" />
+              </IconButton>
               <IconLink
                 href={routeHref({ name: 'settings' })}
                 label={t('nav.openSettings')}
@@ -80,7 +117,16 @@ export function AppShell({ children }: { children: (route: Route) => ReactNode }
           {children(route)}
         </main>
       </div>
-      {!immersive && <TabBar current={tabOf(route)} />}
+      {!immersive && (
+        <TabBar
+          current={tabOf(route)}
+          collapsed={collapsed}
+          onToggleCollapse={toggleCollapsed}
+          onOpenProfile={() => setProfileOpen(true)}
+          profile={profile}
+        />
+      )}
+      {profileOpen && <ProfileDialog onClose={() => setProfileOpen(false)} />}
     </>
   );
 }

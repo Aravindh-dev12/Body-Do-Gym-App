@@ -104,9 +104,11 @@
   --control: 44px; /* minimum touch target */
   --control-l: 54px; /* primary button */
   --control-s: 38px; /* small button */
-  --content-width: 60rem;
+  --content-width: 82rem;
   --tab-bar-height: 82px;
-  --rail-width: 5.5rem;
+  --rail-width: 5rem;
+  --sidebar-width: 15rem;
+  --sidebar-collapsed-width: 5rem;
   --z-tab-bar: 5;
   --z-timer: 6;
   --z-overlay: 20;

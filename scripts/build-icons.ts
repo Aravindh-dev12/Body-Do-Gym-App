@@ -13,10 +13,13 @@ mkdirSync(out, { recursive: true });
 const ACCENT = '#ff2a40';
 const INK = '#ffffff';
 
-/** The mark on a 30 × 30 grid: a roofline over a barbell. */
+/** The mark on a 30 × 30 grid: a vertical dumbbell. */
 const lines = `
-  <path d="M7.5 15.5 L15 9 L22.5 15.5" fill="none" stroke="${INK}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10 21 H20 M10 18.5 V23.5 M20 18.5 V23.5" fill="none" stroke="${INK}" stroke-width="2.6" stroke-linecap="round"/>`;
+  <rect x="11.85" y="5" width="6.3" height="1.6" rx="0.5" fill="${INK}"/>
+  <rect x="14.59" y="7.4" width="0.82" height="9.8" fill="${INK}"/>
+  <rect x="8.9" y="18" width="12.2" height="1.6" rx="0.4" fill="${INK}"/>
+  <rect x="7.68" y="20.5" width="14.65" height="1.6" rx="0.4" fill="${INK}"/>
+  <rect x="6.05" y="23" width="17.9" height="1.6" rx="0.4" fill="${INK}"/>`;
 
 /** Rounded square, as used in the browser tab and on home screens that do not mask. */
 const rounded = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="${ACCENT}"/>${lines}</svg>`;
