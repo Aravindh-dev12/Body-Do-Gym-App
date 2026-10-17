@@ -10,8 +10,8 @@ import sharp from 'sharp';
 const out = join(import.meta.dirname, '..', 'public', 'icons');
 mkdirSync(out, { recursive: true });
 
-const ACCENT = '#FF6A2B';
-const INK = '#1A0E07';
+const ACCENT = '#ff2a40';
+const INK = '#ffffff';
 
 /** The mark on a 30 × 30 grid: a roofline over a barbell. */
 const lines = `

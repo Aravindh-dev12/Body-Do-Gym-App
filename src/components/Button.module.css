@@ -15,10 +15,19 @@
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--duration-fast),
+    border-color var(--duration-fast);
+}
+
+.button:hover:not(:disabled) {
+  background: var(--surface-2);
 }
 
 .button:disabled {
   opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .primary {
@@ -26,6 +35,10 @@
   border-color: transparent;
   background: var(--accent);
   color: var(--on-accent);
+}
+
+.primary:hover:not(:disabled) {
+  filter: brightness(1.1);
 }
 
 .ghost {

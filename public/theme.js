@@ -3,9 +3,11 @@
 // with a Content-Security-Policy that forbids inline scripts.
 try {
   var theme = localStorage.getItem('bodydo.theme') || localStorage.getItem('homebody.theme');
-  if (theme === 'light' || theme === 'dark') {
-    document.documentElement.dataset.theme = theme;
+  if (theme === 'light') {
+    document.documentElement.dataset.theme = 'light';
+  } else {
+    document.documentElement.dataset.theme = 'dark';
   }
 } catch (e) {
-  // Storage is unavailable: follow the system theme.
+  document.documentElement.dataset.theme = 'dark';
 }
