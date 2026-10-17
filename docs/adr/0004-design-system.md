@@ -27,7 +27,7 @@ map, Progress, Library, Body, plus a README hero) in both themes.
    no shadows on cards.
 3. **Fonts are bundled, not hosted.** The system specifies Archivo (expanded,
    weight 800) for display, Geist for text and Geist Mono for data, and
-   suggests loading them from Google Fonts. Homebody makes no third-party
+   suggests loading them from Google Fonts. Body Do makes no third-party
    requests, so the same variable fonts ship with the app through Fontsource.
 4. **Cyrillic display text falls back to Geist.** Archivo has no Cyrillic
    glyphs. The display stack is `Archivo → Geist → system`, so Russian titles

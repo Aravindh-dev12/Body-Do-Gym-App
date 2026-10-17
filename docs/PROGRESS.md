@@ -162,7 +162,7 @@ tightly related ones) that leaves the project building, linted and tested.
   "restore calculation", manual and random replacement with undo, and exclusion
   with a restore list in the settings. Edits to a finished session rewrite its
   recorded result. Shared Dialog and Disclosure components. 458 tests.
-- **2026-10-11 — Design.** The Homebody design system and screen mockups
+- **2026-10-11 — Design.** The Body Do design system and screen mockups
   arrived ([ADR 0004](adr/0004-design-system.md)). Its tokens and fonts are
   adopted first; components and screens are then restyled one by one in
   `style:` commits that leave the logic untouched. Screens built after this
@@ -215,7 +215,7 @@ tightly related ones) that leaves the project building, linted and tested.
   never leave the device. 583 tests.
 - **2026-10-11 — Step 25.** Backup and reset in the settings. Export writes
   everything (state, history, set logs, photos) to
-  `homebody-backup-YYYY-MM-DD.json` through a normal browser download; import
+  `body-do-backup-YYYY-MM-DD.json` through a normal browser download; import
   validates the file, shows a preview with counts and replaces the data only
   after confirmation. Backups of the earlier prototype are recognised and
   converted. "Restore the automatic calculation" clears edits, replacements,
@@ -242,7 +242,7 @@ Function`, which the Content-Security-Policy blocks harmlessly.
   delayed by a debounce; the state document is now written immediately.
 - **2026-10-11 — Step 28.** GitHub Pages deployment workflow: on every push to
   `main` the app is built for the repository sub-path and published with the
-  official Pages actions. Verified locally by serving a `/homebody/` build from
+  official Pages actions. Verified locally by serving a `/Body-Do-Gym-App/` build from
   a plain static server (app, photos and service worker scope all resolve). The
   job is skipped while the repository is private, because Pages needs a public
   repository on the free plan; it has therefore not run yet.

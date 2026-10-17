@@ -9,8 +9,7 @@ receive fixes.
 
 Please report security problems privately, not in a public issue:
 
-- through GitHub's [private vulnerability reporting](https://github.com/Aravindh-dev12/Body-Do-Gym-App/security/advisories/new), or
-- by email to khoren.markosyan@gmail.com.
+- through GitHub's [private vulnerability reporting](https://github.com/Aravindh-dev12/Body-Do-Gym-App/security/advisories/new).
 
 Include what you found, how to reproduce it and what an attacker could do with it. You can expect
 an acknowledgement within a week. Once a fix is released, the report is credited in the changelog

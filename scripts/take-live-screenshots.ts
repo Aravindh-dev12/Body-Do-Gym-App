@@ -55,7 +55,10 @@ async function run() {
       await desktopPage.waitForTimeout(300);
     }
   } catch (err) {
-    console.log('Note: Skipping profile modal capture:', err.message);
+    console.log(
+      'Note: Skipping profile modal capture:',
+      err instanceof Error ? err.message : String(err),
+    );
   }
 
   // 2. Mobile screen captures (390 x 844) in Dark theme
