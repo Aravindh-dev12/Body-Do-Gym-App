@@ -17,7 +17,13 @@ Body Do builds a personalized training plan from your schedule and equipment, te
 every set, and adjusts the numbers as you log your sessions. It is science-based, runs entirely in
 the browser, and can be installed as an offline progressive web app (PWA).
 
-## Features
+## Desktop Dashboard
+
+<p align="center">
+  <img src="docs/assets/screens/dashboard-desktop.png" width="100%" alt="Body Do Desktop Dashboard with Collapsible Sidebar">
+</p>
+
+## Mobile Screenshots
 
 <table>
   <tr>
@@ -28,7 +34,7 @@ the browser, and can be installed as an offline progressive web app (PWA).
   <tr>
     <td width="33%"><img src="docs/assets/screens/progress-dark.png" alt="Progress screen"></td>
     <td width="33%"><img src="docs/assets/screens/exercises-dark.png" alt="Exercise catalog"></td>
-    <td width="33%"><img src="docs/assets/screens/body-dark.png" alt="Body screen"></td>
+    <td width="33%"><img src="docs/assets/screens/profile-modal.png" alt="Profile and Login / Signup Modal"></td>
   </tr>
 </table>
 
