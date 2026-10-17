@@ -1,0 +1,14 @@
+.track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--line);
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--good);
+  transition: inline-size var(--duration-normal) ease-out;
+}

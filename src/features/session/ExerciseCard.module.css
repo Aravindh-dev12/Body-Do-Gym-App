@@ -1,0 +1,121 @@
+/* Design system: ExerciseCard. */
+.card {
+  --field-bg: var(--bg);
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-4);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: 30px;
+}
+
+.name {
+  font-size: var(--display-s);
+}
+
+.muscles {
+  margin-top: var(--space-1);
+  color: var(--ink-muted);
+  font-size: var(--text-body-s);
+}
+
+/* The numbers are the interface: the prescription is the largest thing on the card. */
+.rx {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  font-family: var(--font-display);
+  font-stretch: var(--display-stretch);
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--display-weight);
+  line-height: 1;
+}
+
+.dose {
+  font-size: var(--display-rx);
+}
+
+.load {
+  color: var(--accent);
+  font-size: var(--display-m);
+}
+
+.complete .dose {
+  color: var(--good-ink);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+/* A tappable data chip: dotted underline, opens its explanation. */
+.chipButton {
+  padding: 5px 10px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--surface-3);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-variant-numeric: tabular-nums;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.note {
+  font-size: var(--text-body-s);
+}
+
+.swap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  font-size: var(--text-caption);
+}
+
+.swap:disabled {
+  color: var(--ink-muted);
+}
+
+.swap svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (min-width: 44rem) {
+  .card {
+    display: grid;
+    grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+  }
+
+  .card > :nth-child(n + 3) {
+    grid-column: 1 / -1;
+  }
+}

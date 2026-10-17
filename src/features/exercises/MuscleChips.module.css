@@ -1,0 +1,46 @@
+/* One scrolling row of muscle chips, bleeding to the screen edge. */
+.muscles {
+  display: flex;
+  gap: 6px;
+  margin-inline: calc(var(--space-5) * -1);
+  padding: 2px var(--space-5);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+/* Where there is room, every chip is visible at once. */
+@media (min-width: 56.25rem) {
+  .muscles {
+    flex-wrap: wrap;
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow-x: visible;
+  }
+}
+
+.muscle {
+  flex: none;
+  height: var(--control-s);
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-s);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: var(--text-body-s);
+}
+
+.muscleCount {
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+}
+
+.muscle[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.muscle[aria-pressed='true'] .muscleCount {
+  color: inherit;
+  opacity: 0.7;
+}

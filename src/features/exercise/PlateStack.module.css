@@ -1,0 +1,56 @@
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.drawing {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 28px;
+}
+
+.bar {
+  width: var(--space-5);
+  height: var(--space-1);
+  border-radius: 2px;
+  background: var(--ink-muted);
+}
+
+.plate {
+  width: 7px;
+  border-radius: 3px;
+}
+
+.p25 {
+  background: var(--plate-25);
+}
+
+.p20 {
+  background: var(--plate-20);
+}
+
+.p15 {
+  background: var(--plate-15);
+}
+
+.p10 {
+  background: var(--plate-10);
+}
+
+.p5 {
+  background: var(--plate-5);
+}
+
+.small {
+  background: var(--plate-small);
+}
+
+.label {
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-variant-numeric: tabular-nums;
+}

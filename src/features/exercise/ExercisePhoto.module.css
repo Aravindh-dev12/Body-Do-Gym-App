@@ -1,0 +1,84 @@
+/* Photos always sit on a white plate, 3:2, cross-fading between start and end. */
+.photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: var(--photo-plate);
+  cursor: zoom-in;
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity var(--duration-normal) ease-out;
+}
+
+.end {
+  opacity: 0;
+}
+
+/* The "Start · End" pill: the dot of the frame on screen is lit. */
+.pill {
+  position: absolute;
+  inset-block-end: var(--space-3);
+  inset-inline-start: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--scrim);
+  color: var(--on-scrim);
+  font-size: var(--text-caption);
+  font-weight: 600;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ink-muted);
+  transition: background var(--duration-normal) ease-out;
+}
+
+.startDot,
+:global(:root[data-frame='1']) .endDot {
+  background: var(--accent);
+}
+
+:global(:root[data-frame='1']) .startDot {
+  background: var(--ink-muted);
+}
+
+.zoom {
+  position: absolute;
+  inset-block-start: var(--space-3);
+  inset-inline-end: var(--space-3);
+  display: grid;
+  width: var(--control-s);
+  height: var(--control-s);
+  place-items: center;
+  border-radius: 50%;
+  background: var(--scrim);
+  color: var(--on-scrim);
+  font-size: var(--text-caption);
+}
+
+/* The frame is flipped for the whole page by useFrameTicker. */
+:global(:root[data-frame='1']) .end {
+  opacity: 1;
+}
+
+/* A still thumbnail has no overlays and takes its shape from its container. */
+.still {
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: inherit;
+}

@@ -1,0 +1,45 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label {
+  color: var(--ink-muted);
+  font-size: var(--text-caption);
+  font-weight: 500;
+}
+
+.label output {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.hint {
+  color: var(--ink-muted);
+  font-size: var(--text-caption);
+}
+
+.control {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--field-bg, var(--surface));
+  font-size: 15px;
+}
+
+.control::placeholder {
+  color: var(--ink-muted);
+}
+
+.control[type='range'] {
+  min-height: var(--control);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  accent-color: var(--accent);
+}

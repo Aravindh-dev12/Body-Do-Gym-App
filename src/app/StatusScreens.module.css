@@ -1,0 +1,12 @@
+.center {
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  padding: var(--space-5);
+  color: var(--ink-muted);
+}
+
+.center > * {
+  max-width: 32rem;
+  color: var(--ink);
+}

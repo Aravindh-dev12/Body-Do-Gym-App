@@ -1,0 +1,80 @@
+/* Design system: HeatScale bars. 8px on line, value in mono. */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(5.125rem, 30%) minmax(0, 1fr) 2.125rem;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  font-size: var(--text-body-s);
+}
+
+.button {
+  min-height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: transparent;
+  text-align: start;
+}
+
+.selected .label {
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track {
+  position: relative;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--line);
+}
+
+.fill {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+.tier0 {
+  background: var(--heat-0);
+}
+
+.tier1 {
+  background: var(--heat-1);
+}
+
+.tier2 {
+  background: var(--heat-2);
+}
+
+.tier3 {
+  background: var(--heat-3);
+}
+
+.tier4 {
+  background: var(--heat-4);
+}
+
+.value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}

@@ -1,0 +1,847 @@
+{
+  "app": {
+    "name": "Body Do",
+    "tagline": "Body workout planner and load calculator"
+  },
+  "nav": {
+    "label": "Sections",
+    "plan": "Plan",
+    "progress": "Progress",
+    "exercises": "Exercises",
+    "body": "Body",
+    "settings": "Settings",
+    "openSettings": "Open settings"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "delete": "Delete",
+    "back": "Back",
+    "open": "Open",
+    "undo": "Undo",
+    "restore": "Restore",
+    "loading": "Loading…",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "comingSoon": "This screen is on its way.",
+    "quote": "“{{text}}”",
+    "andMore": "and {{count}} more",
+    "or": "or"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "units": {
+    "kg": "{{value}} kg",
+    "cm": "{{value}} cm",
+    "seconds": "{{value}} s",
+    "minutes": "{{value}} min",
+    "percent": "{{value}}%",
+    "reps_one": "{{count}} rep",
+    "reps_other": "{{count}} reps",
+    "sets_one": "{{count}} set",
+    "sets_other": "{{count}} sets",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "weeks_one": "{{count}} week",
+    "weeks_other": "{{count}} weeks",
+    "exercises_one": "{{count}} exercise",
+    "exercises_other": "{{count}} exercises"
+  },
+  "muscles": {
+    "chest": {
+      "name": "chest",
+      "about": "The pectoralis major. Brings the arms together in front of the body: presses, push-ups, flyes."
+    },
+    "shoulders": {
+      "name": "shoulders",
+      "about": "The deltoids: front, middle and rear heads. Overhead presses, lateral raises and bent-over raises."
+    },
+    "traps": {
+      "name": "traps",
+      "about": "Upper back and neck. Lift and squeeze the shoulder blades: shrugs, upright rows."
+    },
+    "neck": {
+      "name": "neck",
+      "about": "The neck muscles hold the head and protect the cervical spine. Train them smoothly, without jerking."
+    },
+    "biceps": {
+      "name": "biceps",
+      "about": "The two-headed muscle of the upper arm. Bends the elbow: curls, chin-ups."
+    },
+    "triceps": {
+      "name": "triceps",
+      "about": "The three-headed muscle of the upper arm, about two thirds of its size. Straightens the elbow: close-grip presses, dips, skull crushers."
+    },
+    "forearms": {
+      "name": "forearms",
+      "about": "The forearm muscles are responsible for grip. They work in almost every pull and in wrist exercises."
+    },
+    "abs": {
+      "name": "abs",
+      "about": "The rectus abdominis and the obliques. They flex and rotate the torso and keep it rigid in a plank."
+    },
+    "lats": {
+      "name": "lats",
+      "about": "The widest muscles of the back, the ones that create a V shape. Pull the arms down and towards the body: pull-ups, rows."
+    },
+    "middle_back": {
+      "name": "middle back",
+      "about": "The rhomboids and the middle traps. Squeeze the shoulder blades together: bent-over rows, reverse flyes."
+    },
+    "lower_back": {
+      "name": "lower back",
+      "about": "The spinal erectors. Keep the spine straight in deadlifts, good mornings and back extensions."
+    },
+    "glutes": {
+      "name": "glutes",
+      "about": "The gluteus maximus, the strongest muscle in the body. Extends the hip: bridges, squats, lunges."
+    },
+    "abductors": {
+      "name": "abductors",
+      "about": "The gluteus medius and the hip abductors. Stabilize the pelvis and knees and move the leg out to the side."
+    },
+    "adductors": {
+      "name": "adductors",
+      "about": "The inner thigh. Bring the legs together and assist in squats and lunges."
+    },
+    "quads": {
+      "name": "quads",
+      "about": "The front of the thigh. Straightens the knee: squats, lunges, step-ups."
+    },
+    "hamstrings": {
+      "name": "hamstrings",
+      "about": "The back of the thigh. Bends the knee and extends the hip: Romanian deadlifts, bridges."
+    },
+    "calves": {
+      "name": "calves",
+      "about": "The gastrocnemius and the soleus. Calf raises, jumps, walking."
+    }
+  },
+  "equipment": {
+    "none": "no equipment",
+    "db": {
+      "name": "Dumbbells",
+      "inline": "dumbbells"
+    },
+    "bench": {
+      "name": "Bench",
+      "inline": "bench"
+    },
+    "bb": {
+      "name": "Barbell",
+      "inline": "barbell"
+    },
+    "rack": {
+      "name": "Squat rack",
+      "inline": "squat rack"
+    },
+    "ez": {
+      "name": "EZ bar",
+      "inline": "EZ bar"
+    },
+    "kb": {
+      "name": "Kettlebell",
+      "inline": "kettlebell"
+    },
+    "bar": {
+      "name": "Pull-up bar",
+      "inline": "pull-up bar"
+    },
+    "dip": {
+      "name": "Dip bars",
+      "inline": "dip bars"
+    },
+    "bands": {
+      "name": "Resistance bands",
+      "inline": "bands"
+    },
+    "box": {
+      "name": "Box, chair or step",
+      "inline": "box or chair"
+    },
+    "ball": {
+      "name": "Exercise ball",
+      "inline": "exercise ball"
+    },
+    "medball": {
+      "name": "Medicine ball",
+      "inline": "medicine ball"
+    }
+  },
+  "sex": {
+    "male": "Male",
+    "female": "Female"
+  },
+  "level": {
+    "beginner": {
+      "name": "Beginner",
+      "hint": "under 6 months"
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "hint": "6 months to 2 years"
+    },
+    "advanced": {
+      "name": "Advanced",
+      "hint": "2+ years"
+    }
+  },
+  "goal": {
+    "hypertrophy": "Muscle gain",
+    "strength": "Strength",
+    "endurance": "Endurance and definition"
+  },
+  "difficulty": {
+    "beginner": "beginner",
+    "intermediate": "intermediate",
+    "expert": "advanced"
+  },
+  "templates": {
+    "FA": {
+      "name": "Full body A",
+      "focus": "Squat & chest press focus"
+    },
+    "FB": {
+      "name": "Full body B",
+      "focus": "Hinge & overhead press focus"
+    },
+    "FC": {
+      "name": "Full body C",
+      "focus": "Lunge & chest press focus"
+    },
+    "UA": {
+      "name": "Upper A",
+      "focus": "Chest press & row focus"
+    },
+    "UB": {
+      "name": "Upper B",
+      "focus": "Overhead press & pull-up focus"
+    },
+    "LA": {
+      "name": "Lower A",
+      "focus": "Squat focus"
+    },
+    "LB": {
+      "name": "Lower B",
+      "focus": "Hinge focus"
+    },
+    "PA": {
+      "name": "Push A",
+      "focus": "Chest focus"
+    },
+    "PB": {
+      "name": "Push B",
+      "focus": "Shoulder focus"
+    },
+    "QA": {
+      "name": "Pull A",
+      "focus": "Lat focus"
+    },
+    "QB": {
+      "name": "Pull B",
+      "focus": "Row focus"
+    },
+    "GA": {
+      "name": "Legs A",
+      "focus": "Squat focus"
+    },
+    "GB": {
+      "name": "Legs B",
+      "focus": "Hinge focus"
+    }
+  },
+  "phase": {
+    "intro": "Introduction",
+    "working": "Working",
+    "peak": "Peak",
+    "deload": "Deload"
+  },
+  "rating": {
+    "easy": {
+      "name": "Easy",
+      "hint": "could do 3+ more"
+    },
+    "ok": {
+      "name": "On plan",
+      "hint": "effort as prescribed"
+    },
+    "hard": {
+      "name": "Hard",
+      "hint": "at the limit"
+    },
+    "fail": {
+      "name": "Missed",
+      "hint": "fewer reps"
+    }
+  },
+  "notes": {
+    "lightestTooHeavy": "Even the lightest weight is on the heavy side: do fewer reps and build up gradually.",
+    "notEnoughWeight": "Not enough weight for the target rep range: slow the lowering phase down to 3 seconds.",
+    "bigStep": "A big weight jump: fewer reps than usual for now, they will come back next week.",
+    "tooManyReps": "That is a lot of reps: switch to a harder variation or slow down, 3 seconds on the way down."
+  },
+  "shell": {
+    "skip": "Skip to content",
+    "savedLocally": "Saved on this device",
+    "notSaved": "Storage is unavailable: changes will be lost when you close the page.",
+    "saveFailed": "The last change could not be saved.",
+    "updateReady": "A new version of Body Do is ready.",
+    "reload": "Reload"
+  },
+  "loadError": {
+    "title": "Your saved data could not be read",
+    "body": "Nothing was changed or deleted. You can start over with a clean profile, which erases the data saved on this device.",
+    "details": "Details: {{message}}",
+    "reset": "Erase data and start over",
+    "confirm": "Yes, erase everything"
+  },
+  "theme": {
+    "label": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "settings": {
+    "appearance": "Appearance",
+    "intro": "Any change rebuilds the plan immediately. Your weight edits and exercise swaps are kept.",
+    "profile": {
+      "title": "Profile",
+      "age": "Age",
+      "height": "Height, cm",
+      "weight": "Current weight, kg",
+      "sex": "Sex",
+      "level": "Strength training experience",
+      "goal": "Goal"
+    },
+    "scale": {
+      "title": "Overall load",
+      "about": "Raises or lowers the working weights of every exercise in one move. The calculator picks new weights from your equipment and recalculates the reps. Exercises where you entered the weight or reps yourself follow your numbers and do not change.",
+      "label": "Weights relative to the calculation",
+      "quick": "Quick adjustment",
+      "reset": "100%"
+    },
+    "schedule": {
+      "title": "Schedule",
+      "days": "Training days",
+      "perWeek_one": "{{count}} day per week",
+      "perWeek_other": "{{count}} days per week",
+      "minutes": "Time per session",
+      "start": "Plan start",
+      "length": "Length",
+      "deload": "Deload week",
+      "deloadOn": "Every 4th week",
+      "deloadOff": "No deload"
+    },
+    "equipment": {
+      "title": "Equipment at home",
+      "about": "The plan is rebuilt right away: exercises that need missing equipment are replaced with ones you can do, and the weights are recalculated.",
+      "list": "What you have",
+      "dbList": "Dumbbells: available weights (per dumbbell), kg",
+      "kbList": "Kettlebells: available weights, kg",
+      "listHint": "Separate the weights with spaces or commas, for example 2.5, 5, 7.5. The calculator only picks weights from this list.",
+      "bar": "Bar, kg",
+      "step": "Weight step, kg",
+      "max": "Maximum, kg",
+      "added": "Added: {{item}}.",
+      "removed": "Removed: {{item}}.",
+      "rebuilt": "The plan was rebuilt.",
+      "newExercises": "New exercises: {{list}}.",
+      "goneExercises": "No longer in the plan: {{list}}.",
+      "recalculated": "Weights were recalculated.",
+      "unchanged": "The exercises in the plan did not change.",
+      "unchangedAdded": "The exercises in the plan did not change: what is already there fits better, but new options are available for swapping and in the library."
+    },
+    "about": "Exercises, photos and instructions come from the open Free Exercise DB (Unlicense). The calculation uses the Epley formula for the estimated one-rep max, prescribes effort as reps in reserve (RIR) and progresses weekly according to your training level. Body Do is not medical advice.",
+    "excluded": {
+      "title": "Excluded exercises",
+      "about": "They are not used in any workout. Press one to bring it back.",
+      "restore": "Restore {{name}}"
+    }
+  },
+  "plan": {
+    "sample": {
+      "title": "This is a sample plan.",
+      "body": "Body weight 80 kg, dumbbells up to 24 kg, three 45-minute sessions a week. Enter your own details and the plan will be recalculated.",
+      "cta": "Enter my details"
+    },
+    "empty": "Pick at least one training day in the settings to build a plan.",
+    "hero": {
+      "today": "Today",
+      "next": "Next session",
+      "week": "week {{week}}",
+      "about": "about {{minutes}} min",
+      "rir_one": "{{count}} rep in reserve",
+      "rir_other": "{{count}} reps in reserve",
+      "deload": "deload",
+      "start": "Start workout",
+      "resume": "Continue workout",
+      "rirChip": "RIR {{rir}}",
+      "more": "+{{count}}",
+      "exercises_one": "exercise",
+      "exercises_other": "exercises",
+      "workingSets_one": "working set",
+      "workingSets_other": "working sets",
+      "minutes": "{{minutes}}′",
+      "withRest": "with rest"
+    },
+    "blockDone": {
+      "title": "Block complete",
+      "body": "Every session is ticked off. Press “Start the next block” at the bottom of the page: the new plan continues from the weights you reached."
+    },
+    "week": "Week {{week}}",
+    "phaseRir": "{{phase}} · {{rir}} in reserve",
+    "phaseDeload": "{{phase}} · fewer sets, lighter weights",
+    "session": {
+      "about": "~{{minutes}} min",
+      "partial": "{{done}} of {{total}} sets",
+      "markDone": "Mark “{{name}}” on {{date}} as done",
+      "missed": "missed",
+      "unfinished": "not finished",
+      "skipped": "skipped",
+      "moved": "moved"
+    },
+    "nextBlock": {
+      "title": "Next block",
+      "ended": "This block is over.",
+      "pending": "Press the button when you finish this block.",
+      "body": "A new plan for {{weeks}} will start on the first Monday after {{date}} and continue from the weights you reached, including your edits. The overall load returns to 100%, counted from the new weights.",
+      "start": "Start the next block",
+      "confirm": "Yes, start block {{block}}"
+    },
+    "volume": {
+      "title": "This week’s load",
+      "map": "Muscle map →",
+      "about": "Working sets per muscle; secondary work counts as half a set. The marked zone is {{min}}–{{max}} sets, the optimal range for the “{{goal}}” goal."
+    },
+    "blockCard": {
+      "title": "Block {{block}} · {{weeks}}",
+      "done": "{{done}} / {{total}} done",
+      "weekLabel": "Week {{week}}, {{phase}}: {{done}} of {{total}} sessions done"
+    },
+    "weekStrip": {
+      "label": "This week",
+      "session": "{{date}}: {{name}}",
+      "rest": "{{date}}: rest day"
+    },
+    "allSessions": "All sessions"
+  },
+  "exercise": {
+    "compound": "compound",
+    "isolation": "isolation",
+    "setsReps": "{{sets}} × {{reps}}",
+    "setsSeconds": "{{sets}} × {{seconds}} s",
+    "pairLoad": "2 × {{weight}} kg",
+    "load": "{{weight}} kg",
+    "perHand": {
+      "db": "a dumbbell in each hand",
+      "kb": "a kettlebell in each hand"
+    },
+    "single": {
+      "db": "one dumbbell",
+      "kb": "one kettlebell"
+    },
+    "perSide": "each side",
+    "photoShows": {
+      "kb": "The photos show a kettlebell and you have a dumbbell: the movement and technique are the same.",
+      "db": "The photos show a dumbbell and you have a kettlebell: the movement and technique are the same."
+    },
+    "photo": {
+      "open": "Open the photos of “{{name}}” full screen",
+      "start": "Start",
+      "end": "End",
+      "startAlt": "Start of the movement",
+      "endAlt": "End of the movement",
+      "play": "Animate",
+      "pause": "Pause"
+    },
+    "instructions": "Technique",
+    "source": "{{name}} · instructions from the open Free Exercise DB"
+  },
+  "session": {
+    "back": "Back to the plan",
+    "doneMark": "done",
+    "workingSets_one": "{{count}} working set",
+    "workingSets_other": "{{count}} working sets",
+    "rir": {
+      "title_one": "{{count}} rep in reserve.",
+      "title_other": "{{count}} reps in reserve.",
+      "body": "The weight is chosen so that after the last rep you could still do {{count}} more. If it felt easier or harder, enter the real numbers below.",
+      "deloadTitle": "Deload.",
+      "deloadBody": "Fewer sets and about 90% of the calculated weight. Finish every set with 4 reps in reserve: your joints and nervous system recover before the next block."
+    },
+    "warmup": "Warm up for 5 minutes: skip rope or march on the spot, circle your joints, then do 10 squats and 10 incline push-ups.",
+    "card": {
+      "position": "{{index}} · {{kind}}",
+      "rest": "Rest {{time}}",
+      "reserve": "RIR {{count}}",
+      "e1rm": "≈1RM {{weight}} kg",
+      "e1rmPerHand": "≈1RM {{weight}} kg per hand",
+      "e1rmHelp": "What is this?",
+      "limitReps": "limit ≈{{value}} reps",
+      "limitSeconds": "limit ≈{{value}} s",
+      "edited": "edited by you",
+      "rated": "rating applied",
+      "warmupSets": "Warm-up sets: {{sets}}",
+      "warmupSet": "{{weight}} kg × {{reps}}",
+      "warmupSetPair": "2 × {{weight}} kg × {{reps}}",
+      "explain": "≈1RM is the estimated one-rep max: the heaviest weight you could lift once in this exercise with good form{{perHand}}. You never have to test it. It is calculated with the Epley formula from the weight, the reps and the reps in reserve: weight × (1 + (reps + reserve) / 30). Today: {{weight}} × (1 + ({{reps}} + {{rir}}) / 30) ≈ {{result}} kg. This number shows your strength growing even when the weights and reps change, and the calculator uses it to pick the weights for your next sessions.",
+      "explainPerHand": " (per hand here)"
+    },
+    "plates": {
+      "label": "Plates on each side",
+      "barOnly": "bar only, {{bar}} kg",
+      "loading": "bar {{bar}} kg + {{plates}} on each side"
+    },
+    "edit": {
+      "weight": "Weight, kg",
+      "weightPerHand": "Weight per hand, kg",
+      "reps": "Reps",
+      "seconds": "Seconds",
+      "restore": "Restore the calculation",
+      "hint": "Change the weight or the reps to match what you do: every later session of this exercise is recalculated."
+    },
+    "swap": {
+      "random": "Swap",
+      "none": "No swaps",
+      "done": "Replaced {{from}} in every {{session}} session. Weights were recalculated.",
+      "details": "Technique and replacement",
+      "choose": "Replace in this template",
+      "auto": "Automatic",
+      "exclude": "Remove from all workouts",
+      "excludeHint": "For exercises that are uncomfortable or painful. You can bring them back in the settings.",
+      "randomLabel_one": "Swap for another exercise, {{count}} option",
+      "randomLabel_other": "Swap for another exercise, {{count}} options"
+    },
+    "missing": "This session is no longer in the plan.",
+    "summary": "Week {{week}} · {{phase}} · {{sets}}",
+    "sets": {
+      "label": "Sets",
+      "hint": "Tick a set as soon as you finish it: the rest timer starts.",
+      "done": "Set {{n}}, done",
+      "current": "Set {{n}}, current",
+      "upcoming": "Set {{n}}"
+    },
+    "rate": {
+      "label": "How did it feel?",
+      "hint": "The calculator adjusts your next loads."
+    },
+    "nextTime": "Next time, {{date}}: {{dose}}",
+    "failHint": "If you missed several reps, enter how many you actually did in the field below.",
+    "progress": {
+      "set": "Set {{current}} of {{total}}",
+      "allDone": "All {{total}} sets done",
+      "ring": "{{percent}}% of sets done"
+    },
+    "finish": {
+      "markDone": "Mark as done",
+      "marked": "Marked as done"
+    },
+    "timer": {
+      "label": "Rest timer",
+      "sameExercise": "Rest · set {{n}} of {{total}} next",
+      "nextExercise": "Next: {{name}}",
+      "nextSet": "set {{n}} of {{total}} · {{dose}}",
+      "minus": "−15 s",
+      "plus": "+15 s",
+      "minusLabel": "15 seconds less",
+      "plusLabel": "15 seconds more",
+      "skip": "Skip",
+      "go": "Go",
+      "ok": "OK"
+    }
+  },
+  "phaseShort": {
+    "intro": "Intro",
+    "working": "Work",
+    "peak": "Peak",
+    "deload": "Deload"
+  },
+  "missed": {
+    "titlePlan": "You missed {{name}} on {{date}}.",
+    "titleSession": "This session was planned for {{date}}.",
+    "moveRest": "You can do it today: the remaining sessions ({{count}}) then move {{days}} forward, and the order and progression stay the same.",
+    "moveLast": "You can do it today: the plan is extended by those days.",
+    "skipHint": "Or skip it and the plan carries on without it.",
+    "doToday": "Do it today",
+    "skip": "Skip",
+    "open": "Open",
+    "skippedTitle": "This session was skipped.",
+    "skippedBody": "It does not count in the plan. If you did it after all, restore it and tick the sets.",
+    "restore": "Restore"
+  },
+  "progress": {
+    "subtitle": "Estimated one-rep max, block {{block}}",
+    "intro": "Sets, reps and load for every exercise across the whole plan. The solid line is what you did, the dashed line is what the plan expects. Press a date to open that session.",
+    "explainTitle": "What is ≈1RM?",
+    "explainBody": "It is the estimated one-rep max: the heaviest weight you could lift once in an exercise with good form. You never have to test it; it is calculated with the Epley formula:",
+    "explainFormula": "1RM ≈ weight × (1 + (reps + reps in reserve) / 30)",
+    "explainExample": "For example, 20 kg for 10 reps with 2 reps in reserve: 20 × (1 + 12 / 30) = 28 kg. For exercises with two dumbbells it is counted per hand.",
+    "explainWhy": "Weights and reps change from session to session, and the 1RM turns them into one number for strength. If the 1RM grows, you are getting stronger. The calculator uses it to pick the weight and reps for every next session. Exercises without weight show a limit instead: the reps or seconds you could do to failure.",
+    "empty": "There are no exercises in the plan yet.",
+    "unit": {
+      "weighted": "kg ≈1RM",
+      "reps": "reps max",
+      "timed": "s max"
+    },
+    "perHand": "per hand",
+    "edited": "your edits applied",
+    "legend": {
+      "done": "done",
+      "plan": "plan"
+    },
+    "today": "today",
+    "chartLabel": "Progress of {{name}}",
+    "summary": {
+      "sessions": "Sessions: {{count}}",
+      "last": "Last: {{value}}",
+      "best": "Best: {{value}}"
+    },
+    "result": {
+      "weighted": "{{load}} × {{reps}}",
+      "reps": "{{count}} reps",
+      "timed": "{{seconds}} s"
+    },
+    "table": {
+      "caption": "Sessions of {{name}}",
+      "date": "Date",
+      "sets": "Sets",
+      "load": "Load",
+      "e1rm": "≈1RM",
+      "limit": "Limit",
+      "deload": "deload"
+    },
+    "show": "Show the progress of {{name}}",
+    "sessionDetails": "Progress and plan for {{weeks}}"
+  },
+  "map": {
+    "intro": {
+      "overview": "Tap a muscle to see what it does and which exercises train it.",
+      "done": "How you loaded your muscles in finished workouts. The hotter the zone, the more working sets per week.",
+      "plan": "How your current plan loads the muscles in a regular week."
+    },
+    "mode": {
+      "label": "Map mode",
+      "overview": "Overview",
+      "done": "Done",
+      "plan": "Plan"
+    },
+    "period": {
+      "label": "Period",
+      "7": "7 days",
+      "30": "30 days",
+      "0": "All time"
+    },
+    "front": "Front",
+    "back": "Back",
+    "frontLabel": "Muscle map, front view",
+    "backLabel": "Muscle map, back view",
+    "zone": "{{muscle}}: {{tier}}",
+    "zonePlain": "{{muscle}}",
+    "tiers": {
+      "0": "none",
+      "1": "light",
+      "2": "building",
+      "3": "optimal",
+      "4": "over"
+    },
+    "legend": "Load legend",
+    "norm": "Target for the “{{goal}}” goal: {{min}}–{{max}} sets a week for a large muscle, fewer for small ones. Secondary work counts as half a set.",
+    "noHistory": "There are no finished exercises in this period yet: tick your sets during a workout and the map lights up.",
+    "workouts_one": "{{count}} workout",
+    "workouts_other": "{{count}} workouts",
+    "exercises": {
+      "all": "All exercises",
+      "muscle": "{{muscle}} exercises"
+    },
+    "regularWeek": "a regular week",
+    "ranked": {
+      "plan": "Sets per week in the plan",
+      "done7": "Sets in the last 7 days",
+      "done30": "Sets per week, 30-day average",
+      "done0": "Sets per week, all-time average"
+    },
+    "detail": {
+      "label": "{{muscle}} details",
+      "sets7": "sets · 7 days",
+      "sets30": "sets · 30 days",
+      "planned": "planned a week",
+      "target": "weekly target",
+      "since": "since trained",
+      "never": "—",
+      "today": "today",
+      "days": "{{count}}d",
+      "recovering": "This muscle is still recovering: give it 48 hours before the next hard session.",
+      "notInPlan": "Your plan has no direct work for this muscle. You can swap an exercise in a workout under “Technique and replacement”.",
+      "exercises_one": "{{count}} {{muscle}} exercise",
+      "exercises_other": "{{count}} {{muscle}} exercises",
+      "browse": "Show ↓",
+      "close": "Close {{muscle}}"
+    }
+  },
+  "library": {
+    "count_one": "{{count}} exercise",
+    "count_other": "{{count}} exercises",
+    "search": "Search name, muscle or gear",
+    "searchLabel": "Search exercises",
+    "filter": {
+      "label": "Show",
+      "all": "All",
+      "owned": "My gear",
+      "plan": "In plan"
+    },
+    "density": {
+      "label": "Density",
+      "compact": "Compact list",
+      "grid": "Grid",
+      "cards": "Detailed cards"
+    },
+    "muscles": "Filter by muscle",
+    "tags": {
+      "inPlan": "In plan",
+      "excluded": "Excluded",
+      "noGear": "No gear",
+      "needs": "Needs {{gear}}",
+      "assists": "Assists"
+    },
+    "empty": "Nothing found. Try another search or filter.",
+    "open": "Open the photos of {{name}}",
+    "detail": {
+      "primary": "Primary muscles",
+      "secondary": "Assisting",
+      "equipment": "Equipment",
+      "type": "Type",
+      "difficulty": "Difficulty",
+      "next": "Next session",
+      "capacityWeighted": "≈1RM now",
+      "capacityOther": "Limit now",
+      "weighted": "with weight, tracks ≈1RM",
+      "reps": "for reps",
+      "timed": "timed hold",
+      "compound": "compound (multi-joint)",
+      "isolation": "isolation",
+      "steps_one": "Technique · {{count}} step",
+      "steps_other": "Technique · {{count}} steps",
+      "exclude": "Do not suggest",
+      "restore": "Back into the plan"
+    }
+  },
+  "body": {
+    "log": "Log",
+    "closeForm": "Close",
+    "intro": "Weigh and measure yourself once a week, in the morning before eating, at the same spots. The weight on the plan start date sets your starting loads.",
+    "form": {
+      "title": "Add a measurement",
+      "date": "Date",
+      "weight": "Weight, kg",
+      "neck": "Neck, cm",
+      "chest": "Chest, cm",
+      "waist": "Waist, cm",
+      "hips": "Hips, cm",
+      "arm": "Arm, cm",
+      "thigh": "Thigh, cm",
+      "save": "Save",
+      "hint": "Fill in only what you measured. Use a tape without pulling it tight: waist at the navel, neck below the larynx, hips at the widest point of the glutes, arm and thigh at their widest point. Body fat is estimated with the US Navy formula from height, neck and waist; accuracy is about ±3–4%.",
+      "hintFemale": "Fill in only what you measured. Use a tape without pulling it tight: waist at the navel, neck below the larynx, hips at the widest point of the glutes, arm and thigh at their widest point. Body fat is estimated with the US Navy formula from height, neck, waist and hips; accuracy is about ±3–4%."
+    },
+    "metric": {
+      "label": "Metric",
+      "kg": "Weight",
+      "bf": "Body fat",
+      "neck": "Neck",
+      "chest": "Chest",
+      "waist": "Waist",
+      "hips": "Hips",
+      "arm": "Arm",
+      "thigh": "Thigh"
+    },
+    "noWeight": "No weight logged yet",
+    "since": "{{change}} · {{days}}",
+    "chartLabel": "{{metric}} over time",
+    "needTwo": "The chart needs at least two entries.",
+    "navy": "US Navy estimate",
+    "bmi": "BMI",
+    "bmiCategory": {
+      "under": "underweight",
+      "normal": "normal",
+      "over": "overweight",
+      "high": "obese"
+    },
+    "journal": {
+      "title": "Journal",
+      "empty": "No measurements yet.",
+      "delete": "Delete the entry of {{date}}",
+      "fat": "fat {{value}}%"
+    },
+    "unit": {
+      "kg": "kg",
+      "cm": "cm",
+      "bf": "%"
+    }
+  },
+  "photos": {
+    "title": "Progress photos",
+    "titlePose": "Progress photos · {{pose}}",
+    "about": "Take one every 2–4 weeks in the same light, pose and clothes. Photos are stored only on this device.",
+    "pose": {
+      "label": "Pose",
+      "front": "Front",
+      "side": "Side",
+      "back": "Back"
+    },
+    "date": "Date",
+    "add": "Add photo",
+    "saving": "Saving the photo…",
+    "loading": "Loading photos…",
+    "errorLoad": "The photos could not be loaded. Reload the page.",
+    "errorSave": "The photo could not be saved. Try another file (JPEG or PNG).",
+    "errorSpace": "This device has run out of space for photos.",
+    "empty": "Your photo",
+    "apart": "{{days}} apart",
+    "first": "First photo",
+    "second": "Second photo",
+    "alt": "{{pose}} photo, {{date}}",
+    "open": "Open the photo of {{date}}",
+    "delta": {
+      "weight": "weight {{change}}",
+      "waist": "waist {{change}}"
+    },
+    "delete": "Delete photo",
+    "confirmDelete": "Really delete? Press again",
+    "deleteFailed": "Could not delete"
+  },
+  "backup": {
+    "title": "Backup",
+    "about": "One file with everything: profile, plan, edits, results, measurements and photos. Use it to move your data to another device or to restore it.",
+    "export": "Save a backup file",
+    "import": "Load from a file",
+    "exported": "Backup saved.",
+    "exportFailed": "The backup could not be saved. Try again.",
+    "invalid": "This is not a Body Do backup file.",
+    "tooNew": "This backup was made by a newer version of Body Do. Update the app and try again.",
+    "previewTitle": "Restore the backup from {{date}}?",
+    "previewUnknownDate": "an unknown date",
+    "previewBody": "It contains {{sessions}}, {{measurements}} and {{photos}}. Your current data will be replaced; photos from the backup are added to the ones you have.",
+    "sessions_one": "{{count}} finished session",
+    "sessions_other": "{{count}} finished sessions",
+    "measurements_one": "{{count}} measurement",
+    "measurements_other": "{{count}} measurements",
+    "photos_one": "{{count}} photo",
+    "photos_other": "{{count}} photos",
+    "legacy": "This file comes from the earlier prototype and will be converted.",
+    "confirm": "Yes, restore",
+    "restored": "Your data was restored.",
+    "restoreFailed": "The backup could not be restored. Nothing was changed."
+  },
+  "reset": {
+    "title": "Reset",
+    "counts": "Edited sessions: {{edits}}. Replaced exercises: {{swaps}}. Capacities carried from earlier blocks: {{carried}}. Finished sessions: {{done}}.",
+    "about": "A reset removes your edits, replacements and carried capacities and returns the overall load to 100%. Everything is calculated again from your profile. Finished sessions stay.",
+    "action": "Restore the automatic calculation",
+    "confirm": "Yes, reset",
+    "eraseAbout": "Erasing removes everything stored on this device, including results, measurements and photos. Save a backup first if you may want it back.",
+    "erase": "Erase all data",
+    "eraseConfirm": "Yes, erase everything"
+  }
+}
